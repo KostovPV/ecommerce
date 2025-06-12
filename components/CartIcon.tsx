@@ -1,8 +1,15 @@
 "use client";
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 const CartIcon = () => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(()=> {
+    setIsClient(true)
+  }, [])
+  if(!isClient){
+    return null
+  }
   return (
     <Link
       href={'/cart'}

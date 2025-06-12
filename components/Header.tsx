@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
-import logo from '@/images/logo.png'
+import logo from '@/images/logoImage.png'
 import Container from './Container'
 import Form from 'next/form'
 import Link from 'next/link'
 import CartIcon from './CartIcon'
 import { Divide, ShoppingBasket, User } from 'lucide-react'
 import { currentUser } from '@clerk/nextjs/server'
-import { ClerkLoaded, SignedIn, SignInButton } from '@clerk/nextjs'
+import { ClerkLoaded, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 
 
 const Header = async () => {
@@ -16,7 +16,6 @@ const Header = async () => {
 
   return (
     <header className='w-full bg-white py-4 border-b border-b-gray-400' >
-      {/* Logo */}
       <Container className='flex items-center justify-between gap-5'>
         <Link href={'/'}>
           <Image src={logo} alt='logo' className='w-24' priority />
@@ -33,26 +32,33 @@ const Header = async () => {
           <CartIcon />
           <ClerkLoaded>
             {/* <SignedIn> */}
-              <Link
-                href={'/orders'}
-                className='flex items-center text-sm gap-2 border
+            <Link
+              href={'/orders'}
+              className='flex items-center text-sm gap-2 border
      border-gray-200 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect'
-              >
-                <ShoppingBasket className='text-darkBlue w-6 h-6' />
-                <div className='flex flex-col'>
-                  <p className='text-xs'>
-                    <span className='font-semibold'>0</span> items
-                  </p>
-                  <p className='font-semibold'>Ordres</p>
-                </div>
-              </Link>
+            >
+              <ShoppingBasket className='text-darkBlue w-6 h-6' />
+              <div className='flex flex-col'>
+                <p className='text-xs'>
+                  <span className='font-semibold'>0</span> items
+                </p>
+                <p className='font-semibold'>Ordres</p>
+              </div>
+            </Link>
             {/* </SignedIn> */}
             {user ?
-              <div>user</div> :
-              <SignInButton>
+              <div className='flex items-center text-sm gap-2 border
+                 border-gray-200 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect'>
+                <UserButton />
+                <div className='flex flex-col'>
+                  <p className='text-xs'>Welcome back</p>
+                  <p className='font-semibold'>{user?.fullName}</p>
+                </div>
+              </div> :
+              <SignInButton mode='modal'>
                 <div className='flex items-center text-sm gap-2 border
-     border-gray-200 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect'>
-                  <User />
+                 border-gray-200 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect'>
+                  <User className='w-6 h-6 text-darkBlue' />
                   <div className='flex flex-col'>
                     <p className='text-xs'>
                       Account
