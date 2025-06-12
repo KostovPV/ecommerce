@@ -12,7 +12,7 @@ import { ClerkLoaded, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 
 const Header = async () => {
   const user = await currentUser()
-  console.log(user);
+  // console.log(user);
 
   return (
     <header className='w-full bg-white py-4 border-b border-b-gray-400' >

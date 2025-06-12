@@ -1,9 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import { Button } from "@/components/button";
 import Container from "@/components/Container";
+import { getSale } from "@/sanity/helpers";
 
-export default function Home() {
+
+export default async function Home() {
+  const sales = await getSale();
+  console.log(sales);
   return (
     <div>
       <Container className="py-20">
