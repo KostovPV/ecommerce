@@ -1,10 +1,26 @@
-import { Category } from '@/sanity.types'
-import React from 'react'
+// import { Category } from '@/sanity.types'
+// import React from 'react'
 
-const Categories = ({categories}:{categories: Category}) => {
-  return (
-    <div>Categories</div>
-  )
+// const Categories = ({categories}:{categories: Category}) => {
+//   return (
+//     <div>Categories</div>
+//   )
+// }
+
+// export default Categories
+
+import { Category } from "@/sanity.types";
+import React from "react";
+interface Props {
+  categories: Category[];
 }
 
-export default Categories
+const Categories = ({ categories }: Props) => {
+  return (
+    <div className="py-5">
+      <div>categories</div>
+    </div>
+  );
+};
+
+export default Categories;
