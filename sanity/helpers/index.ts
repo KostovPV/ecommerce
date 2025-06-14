@@ -1,5 +1,5 @@
 import { sanityFetch } from "../lib/live";
-import { CATEGORIES_QUERY, PRODUCT_BY_ID_QUERY, PRODUCTS_QUERY, SALE_QUERY } from "./queries";
+import { CATEGORIES_QUERY, PRODUCT_BY_CATEGORY_QUERY, PRODUCT_BY_ID_QUERY, PRODUCT_SEARCH_QUERY, PRODUCTS_QUERY, SALE_QUERY } from "./queries";
 
 export const getSale = async ()=> {
     try {
@@ -53,5 +53,38 @@ export const getProductBySlug = async (slug: string) => {
   } catch (error) {
     console.error("Error fetching product by ID:", error);
     return null;
+  }
+};
+
+
+export const searchProductsByName = async (searchParam: string) => {
+ 
+  try {
+    const products = await sanityFetch({
+      query: PRODUCT_SEARCH_QUERY,
+      params: {
+        searchParam: `${searchParam}`,
+      },
+    });
+    return products?.data || [];
+  } catch (error) {
+    console.error("Error fetching products by name:", error);
+    return [];
+  }
+};
+
+export const getProductsByCategory = async (categorySlug: string) => {
+  
+  try {
+    const products = await sanityFetch({
+      query: PRODUCT_BY_CATEGORY_QUERY,
+      params: {
+        categorySlug,
+      },
+    });
+    return products?.data || [];
+  } catch (error) {
+    console.error("Erroor fetching products by category:", error);
+    return [];
   }
 };

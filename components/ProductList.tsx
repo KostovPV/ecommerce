@@ -1,37 +1,30 @@
-import { Category, Product } from "@/sanity.types"
+import { Category, Product } from "@/sanity.types";
+import React from "react";
+import ProductGrid from "./ProductGrid";
 import Categories from "./Categories";
-import ProductCard from "./ProductCard";
-
 interface Props {
-    products: Product[];
-    title?: boolean;
-    categories: Category[]
+  products: Product[];
+  categories: Category[];
+  title?: boolean;
 }
-
-const ProductList = ({ products, title, categories }: Props) => {
-    return (
-        <div className="pb-32">
-            <Categories categories={categories} />
-            {title && (
-                <div className="pb-5">
-                    <h2 className="text-2xl font-semibold text-gray-600">
-                        Day of the <span className=" text-lightBlue">Deal</span>
-                    </h2>
-                    <p className="text-sm text-gray-500 font-thin">
-                        Don&rsquo;t wait. The time will never be just right.
-                    </p>
-                </div>
-            )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {products?.map((product) => (
-                    <ProductCard key={product?._id} product={product} />
-                ))}
-            </div>
+const ProductList = ({ products, categories, title }: Props) => {
+  return (
+    <div>
+      <Categories categories={categories} />
+      {title && (
+        <div className="pb-5">
+          <h2 className="text-2xl font-semibold text-gray-600">
+            Day of the <span className=" text-lightBlue">Deal</span>
+          </h2>
+          <p className="text-sm text-gray-500 font-thin">
+            Don&rsquo;t wait. The time will never be just right.
+          </p>
         </div>
-    )
-}
+      )}
 
-export default ProductList
+      <ProductGrid products={products} />
+    </div>
+  );
+};
 
-
-
+export default ProductList;
