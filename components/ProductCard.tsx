@@ -6,7 +6,7 @@ import { LuStar } from "react-icons/lu";
 import ProductCartBar from "./ProductCartBar";
 import PriceView from "./PriceView";
 import Link from "next/link";
-// import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "./AddToCartButton";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
@@ -68,7 +68,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           discount={product?.discount}
           label={product?.label}
         />
-        {/* <AddToCartButton product={product} /> */}
+        <AddToCartButton product={product} />
       </div>
     </div>
   );
