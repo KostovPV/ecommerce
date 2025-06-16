@@ -61,7 +61,22 @@ module.exports = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				}
-			}
+			},
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)",
+			},
+			// Custom animation and keyframes
+			animation: {
+				"spin-slow": "spin-slow 5s linear infinite",
+			},
+			keyframes: {
+				"spin-slow": {
+					"0%": { transform: "rotate(0deg)" },
+					"100%": { transform: "rotate(360deg)" },
+				},
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
