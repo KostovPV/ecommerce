@@ -9,7 +9,7 @@ interface Props {
 }
 const ProductList = ({ products, categories, title }: Props) => {
   return (
-    <div>
+    <div className="pb-10">
       <Categories categories={categories} />
       {title && (
         <div className="pb-5">
