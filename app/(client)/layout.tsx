@@ -8,7 +8,7 @@ import { SanityLive } from "@/sanity/lib/live";
 import { Toaster } from "react-hot-toast";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
-// import DisableDraftMode from "@/components/DisableDraftMode";
+import DisableDraftMode from "@/components/DisableDraftMode";
 
 const poppins = localFont({
   src: "../fonts/Poppins.woff2",
@@ -33,7 +33,7 @@ export default async function RootLayout({
         <body className={`${poppins.variable} antialiased`}>
           {(await draftMode()).isEnabled && (
             <>
-              {/* <DisableDraftMode /> */}
+              <DisableDraftMode />
               <VisualEditing />
             </>
           )}
