@@ -244,16 +244,3 @@ const CartPage = () => {
 
 export default CartPage;
 
-
-// "use client";
-
-// const CartPage = () => {
-  
-//   return (
-//     <div className="bg-gray-50 pb-10">
-//      Card Page
-//     </div>
-//   );
-// };
-
-// export default CartPage;

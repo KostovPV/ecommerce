@@ -1,7 +1,7 @@
 "use server";
 
-// import stripe from "@/lib/stripe";
-// import Stripe from "stripe";
+import stripe from "@/lib/stripe";
+import Stripe from "stripe";
 import { urlFor } from "@/sanity/lib/image";
 import { CartItem } from "@/store";
 
