@@ -3,11 +3,11 @@ import ProductGrid from "@/components/ProductGrid";
 
 import { searchProductsByName } from "@/sanity/helpers";
 
-interface Props {
-  searchParams: {
-    query: string;
-  };
-}
+// interface Props {
+//   searchParams: {
+//     query: string;
+//   };
+// }
 
 const SearchPage = async ({
   searchParams,

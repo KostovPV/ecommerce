@@ -1,9 +1,8 @@
-import { Button } from "@/components/button";
 import Container from "@/components/Container";
 import DiscountBanner from "@/components/DiscountBanner";
 import ProductList from "@/components/ProductList";
 import { getAllCategories, getAllProducts, getSale } from "@/sanity/helpers";
-import { log } from "console";
+
 
 
 export default async function Home() {
