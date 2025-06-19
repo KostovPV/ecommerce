@@ -15,26 +15,25 @@
 // middleware.ts
 
 import { clerkMiddleware } from "@clerk/nextjs/server";
-import { createRouteMatcher } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse, NextFetchEvent } from "next/server";
 
-const isProtectedRoute = createRouteMatcher([
-  "/((?!api/webhook).*)", // всичко освен webhook
-]);
+const handler = clerkMiddleware();
 
-export default clerkMiddleware(async (auth, req) => {
-  if (!isProtectedRoute(req)) {
-    // webhook -> не изискваме проверка
+export async function middleware(req: NextRequest, ev: NextFetchEvent) {
+  const { pathname } = req.nextUrl;
+
+  // ⛔ Пропускаме проверка от Clerk за Stripe Webhook
+  if (pathname === "/api/webhook") {
     return NextResponse.next();
   }
 
-  const { sessionId, redirectToSignIn } = await auth();
+  // ✅ Всичко друго минава през Clerk
+  return handler(req, ev);
+}
 
-  if (!sessionId) {
-    // няма сесия → пренасочи към login
-    return redirectToSignIn({ returnBackUrl: req.url });
-  }
-
-  // има сесия → продължи
-  return NextResponse.next();
-});
+export const config = {
+  matcher: [
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/(api|trpc)(.*)",
+  ],
+};
