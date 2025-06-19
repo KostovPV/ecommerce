@@ -216,9 +216,18 @@ const CartPage = () => {
                           className="text-lg font-bold text-black"
                         />
                       </div>
-                      <Button className="w-full" size="lg">
+                      {/* <Button className="w-full" size="lg">
                         Proceed to Checkout
+                      </Button> */}
+                      <Button
+                        onClick={handleCheckout}
+                        disabled={loading}
+                        className="w-full"
+                        size="lg"
+                      >
+                        {loading ? "Processing" : "Proceed to Checkout"}
                       </Button>
+
                       <Link
                         href="/"
                         className="block text-center text-sm text-primary hover:underline"

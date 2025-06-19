@@ -5,7 +5,10 @@ import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
+
+
 export async function POST(req: NextRequest) {
+  console.log("📩 Webhook triggered!");
   const body = await req.text();
   const headersList = await headers();
   const sig = headersList.get("stripe-signature");
@@ -47,7 +50,7 @@ export async function POST(req: NextRequest) {
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
     try {
-      await createOrderInSanity(session);
+      // await createOrderInSanity(session);
       const order = await createOrderInSanity(session);
       console.log("Order created in Sanity:", order);
     } catch (error) {
@@ -73,6 +76,9 @@ async function createOrderInSanity(session: Stripe.Checkout.Session) {
     // customer,
     total_details,
   } = session;
+  console.log("Metadata received in webhook:", session.metadata);
+  console.log("Received session id:", session.id);
+  console.log("Received metadata:", session.metadata);
 
   const { orderNumber, customerName, customerEmail, clerkUserId } =
     metadata as unknown as Metadata;

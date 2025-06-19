@@ -19,12 +19,15 @@ const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
   const handleOrderClick = (order: MY_ORDERS_QUERYResult[number]) => {
     setSelectedOrder(order);
   };
+  console.log( 'orders',orders);
+  
   return (
     <>
       <TableBody>
         <TooltipProvider>
           {orders.map((order) => (
-            <Tooltip key={order?.orderNumber}>
+            // <Tooltip key={order?.orderNumber}>
+            <Tooltip key={order?._id}>
               <TooltipTrigger asChild>
                 <TableRow
                   className="cursor-pointer hover:bg-gray-100 h-12"
