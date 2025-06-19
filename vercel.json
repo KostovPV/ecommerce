@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/api/webhook",
+      "methods": ["POST"],
+      "headers": {
+        "x-vercel-protection-bypass": "true"
+      },
+      "dest": "/api/webhook"
+    }
+  ]
+}
