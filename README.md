@@ -4,7 +4,7 @@ A modern and responsive ecommerce application built with **Next.js 14**, **Sanit
 
 ## 🔗 Live Demo
 
-Check the app live at: [https://your-live-link.vercel.app]
+Check the app live at: [https://ecommerce-u7wk.vercel.app/]
 
 
 ## 🚀 Features
