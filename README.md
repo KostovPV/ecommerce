@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Ecommerce Web App
 
-## Getting Started
+A modern and responsive ecommerce application built with **Next.js 14**, **Sanity CMS**, and **Tailwind CSS**. The project supports dynamic product listings, shopping cart functionality, and smooth user experience with modern animations and mobile-first design.
 
-First, run the development server:
+## 🚀 Features
+
+- 🛒 Dynamic product pages from Sanity CMS
+- 💼 Fully functional shopping cart (add/remove items)
+- 🔍 Product filtering and search
+- 📱 Responsive layout (mobile-first)
+- 🔄 Carousel with autoplay (Embla)
+- 🌐 Deployed via Vercel
+
+## 🛠️ Tech Stack
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Sanity v3** (CMS backend)
+- **Tailwind CSS**
+- **Embla Carousel**
+- **Shadcn/ui** components
+- **React Icons**
+
+## 📸 Preview
+Home Page
+![home](https://github.com/user-attachments/assets/c002f011-5559-4d52-9f1d-c4d4fc676dba)
+
+Filter by category
+![filterByCathegory](https://github.com/user-attachments/assets/dff052d6-fcd9-4e6d-90f0-b3387828708e)
+
+Login Page
+![login](https://github.com/user-attachments/assets/28fb5947-9aa9-42be-85e7-5e3eb97de2ed)
+
+Success Page
+![SuccessPage](https://github.com/user-attachments/assets/cb07d061-de29-4133-a076-0275424a2ab4)
+
+Orders Page
+![OrdersPage](https://github.com/user-attachments/assets/3784ab85-e623-4129-806d-1930df3ba46d)
+
+Order Details
+![OrderDetails](https://github.com/user-attachments/assets/25703a49-ab3b-4c8a-b314-0f4fb6910d37)
+
+
+
+## 📦 Installation
 
 ```bash
+git clone https://github.com/KostovPV/ecommerce
+cd ecommerce
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
