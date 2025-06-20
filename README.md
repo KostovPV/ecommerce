@@ -2,6 +2,11 @@
 
 A modern and responsive ecommerce application built with **Next.js 14**, **Sanity CMS**, and **Tailwind CSS**. The project supports dynamic product listings, shopping cart functionality, and smooth user experience with modern animations and mobile-first design.
 
+## 🔗 Live Demo
+
+Check the app live at: [https://your-live-link.vercel.app]
+
+
 ## 🚀 Features
 
 - 🛒 Dynamic product pages from Sanity CMS
