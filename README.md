@@ -40,7 +40,8 @@ Orders Page
 Order Details
 ![OrderDetails](https://github.com/user-attachments/assets/25703a49-ab3b-4c8a-b314-0f4fb6910d37)
 
-
+Sanity Panel Presentation
+![Sanity Presentation](https://github.com/user-attachments/assets/d54bd1ae-354a-491d-8aa9-c0a20ace3e01)
 
 ## 📦 Installation
 
